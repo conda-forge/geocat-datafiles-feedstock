@@ -15,8 +15,7 @@ source:
 build:
   noarch: python
   number: 0
-  script: python -m pip install --no-deps --ignore-installed -vv .
-  # skip: true  # [py<38 or win]
+  script: {{ PYTHON }} -m pip install --no-deps --ignore-installed -vv .
 
 requirements:
   build:
