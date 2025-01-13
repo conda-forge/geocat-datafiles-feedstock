@@ -49,8 +49,9 @@ about:
 
 extra:
   recipe-maintainers:
+    - cyschneck # C. Schneck https://github.com/cyschneck
     - anissa111 # A. Zacharias https://github.com/anissa111
     - erogluorhan # O. Eroglu https://github.com/erogluorhan
-    - hCraker # H. Craker https://github.com/hCraker
-    - michaelavs # M. Sizemore https://github.com/michaelavs
-    - pilotchute # A. Kootz https://github.com/pilotchute
+    - jukent # J. Kent https://github.com/jukent/
+    - kafitzgerald # K. FitzGerald https://github.com/kafitzgerald
+
