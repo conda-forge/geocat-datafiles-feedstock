@@ -1,32 +1,26 @@
 {% set name = "geocat-datafiles" %}
 {% set version = "2025.07.0" %}
+{% set python_min = "3.10" %}
 
 package:
-  name: {{ name }}
+  name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://github.com/NCAR/{{ name }}/archive/v{{ version }}.tar.gz # For building from a specific tag's tarball
-  sha256: cf10abb7630d7ec2f4768a3382926fecc531e631077ca9277a78126f8a163119
-  # git_tag: v{{ version }} # For building from a specific tag
-  # git_rev: main # For building from branch for debugging purposes
-  # git_url: https://github.com/NCAR/{{ name }}.git
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/geocat_datafiles-{{ version }}.tar.gz
+  sha256: 9b41fc8d803cf77230fc58c9966f0329858a92ba42c0f6b82e4532392adc84b5
 
 build:
   noarch: python
   number: 0
-  script: {{ PYTHON }} -m pip install --no-deps --ignore-installed -vv .
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
-  build:
-    - python >=3.8                        # [build_platform != target_platform]
-    - pip                                 # [build_platform != target_platform]
-    - setuptools                          # [build_platform != target_platform]
-    - cross-python_{{ target_platform }}  # [build_platform != target_platform]
   host:
     - python {{ python_min }}
     - pip
     - setuptools
+    - setuptools_scm
   run:
     - python >={{ python_min }}
     - pooch
