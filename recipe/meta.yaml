@@ -1,5 +1,5 @@
 {% set name = "geocat-datafiles" %}
-{% set version = "2025.7.0" %}
+{% set version = "2025.7.1" %}
 {% set python_min = "3.10" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/geocat_datafiles-{{ version }}.tar.gz
-  sha256: 9b41fc8d803cf77230fc58c9966f0329858a92ba42c0f6b82e4532392adc84b5
+  sha256: fac8c84dfc2cc0d1d8bfedfe33dfecce2b98649f0860863d441ba8455c2d5429
 
 build:
   noarch: python
